@@ -1,0 +1,312 @@
+# -*- coding: utf-8 -*-
+
+<WindowManager>
+    Tizer
+        name: "Tizer"
+        BoxLayout:
+            orientation:"vertical"
+            size:self.parent.width,self.parent.height
+            VideoPlayerNoCrl
+                source:"none.jpg"
+                width:self.parent.width
+                height:self.parent.height
+
+    KivyShowVideoFrames
+        name: "KivyShowVideoFrames"
+
+        BoxLayout:
+            size_hint:1,1
+            orientation:'vertical'
+            BoxLayout:
+                size_hint:1,.07
+                ActionBar:
+                    pos_hint:{'top':1}
+                    ActionView:
+                        use_seprator:True
+                        ActionPrevious:
+                            with_previous:False
+                            app_icon:''
+                        ActionButton:
+                            id:menu_btn_setting
+                            font_name:'Assets/Fonts/BTitrBd.ttf'
+                            font_size:16
+                            on_press:self.parent.parent.parent.parent.parent.clicked_setting()
+                        ActionButton:
+                            id:menu_btn_disconnect
+                            font_size:16
+                            font_name:'Assets/Fonts/BTitrBd.ttf'
+                            on_press:self.parent.parent.parent.parent.parent.clicked_dissconnect()
+                        ActionButton:
+                            id:menu_btn_connect
+                            font_size:16
+                            font_name:'Assets/Fonts/BTitrBd.ttf'
+                            on_press:self.parent.parent.parent.parent.parent.clicked_connect()
+
+            BoxLayout:
+                size_hint:1,.93
+                orientation : "horizontal"
+                padding:10
+                BoxLayout:
+                    size_hint:1,1
+                    FloatLayout:
+                        size_hint:1,1
+
+                        KivyCamera:
+                            opacity:1
+                            id: qrcam
+                            source:"Assets/icons/66.png"
+                            width:self.parent.width
+                            height:self.parent.height
+                            pos_hint: {"x":0,"y":0}
+
+                        GridLayout:
+                            pos_hint: {"x":0,"y":0}
+                            width: self.parent.width
+                            height: self.parent.height
+                            cols:2
+                            rows:2
+                            id:parent_grid_videos
+
+                            BoxLayout:
+                                padding:6
+                                orientation:"vertical"
+                                width:self.parent.width/2
+                                height:self.parent.height/2
+                                BoxLayout:
+                                    size_hint:1,.9
+                                    BoxLayout:
+                                        area:"1"
+                                        size_hint:1,1
+                                BoxLayout:
+                                    opacity:0
+                                    index:"grid_box_1"
+                                    id:grid_box_1
+                                    spacing:10
+                                    orientation: "horizontal"
+                                    size_hint:1,.1
+                                    Label:
+                                        id:cam1_name1
+                                        font_name:'Assets/Fonts/BKoodakBold.ttf'
+                                        font_size:20
+                                        size_hint_x:.9
+                                    Label:
+                                        size_hint_x:.1
+                                    IconButtonFullScreen:
+                                        id_id:"full_screen1"
+                                        size_hint_x:.2
+                                        source:"Assets/icons/fullscreen-enter.png"
+                                    Label:
+                                        size_hint_x:.1
+                                    IconMotionDetectionChange:
+                                        id:motion1
+                                        index:"1"
+                                        size_hint_x:.2
+                                        source:"Assets/icons/motion-detection-none.png"
+
+
+
+                            BoxLayout:
+                                padding:6
+                                orientation:"vertical"
+                                width:self.parent.width/2
+                                height:self.parent.height/2
+                                BoxLayout:
+                                    size_hint:1,.9
+                                    BoxLayout:
+                                        area:"2"
+                                        size_hint:1,1
+                                BoxLayout:
+                                    opacity:0
+                                    id:grid_box_2
+                                    orientation: "horizontal"
+                                    size_hint:1,.1
+                                    Label:
+                                        id:cam2_name2
+                                        font_name:'Assets/Fonts/BKoodakBold.ttf'
+                                        font_size:20
+                                        size_hint_x:.9
+                                    Label:
+                                        size_hint_x:.2
+                                    IconButtonFullScreen:
+                                        id_id:"full_screen2"
+                                        size_hint_x:.2
+                                        source:"Assets/icons/fullscreen-enter.png"
+                                    Label:
+                                        size_hint_x:.2
+                                    IconMotionDetectionChange:
+                                        id:motion2
+                                        index:"2"
+                                        size_hint_x:.2
+                                        source:"Assets/icons/motion-detection-none.png"
+
+
+
+                            BoxLayout:
+                                padding:6
+                                orientation:"vertical"
+                                width:self.parent.width/2
+                                height:self.parent.height/2
+                                BoxLayout:
+                                    size_hint:1,.9
+                                    BoxLayout:
+                                        area:"3"
+                                        size_hint:1,1
+                                BoxLayout:
+                                    opacity:0
+                                    id:grid_box_3
+                                    orientation: "horizontal"
+                                    size_hint:1,.1
+                                    Label:
+                                        id:cam3_name3
+                                        font_name:'Assets/Fonts/BKoodakBold.ttf'
+                                        font_size:20
+                                        size_hint_x:.9
+                                    Label:
+                                        size_hint_x:.2
+                                    IconButtonFullScreen:
+                                        id_id:"full_screen3"
+                                        size_hint_x:.2
+                                        source:"Assets/icons/fullscreen-enter.png"
+                                    Label:
+                                        size_hint_x:.2
+                                    IconMotionDetectionChange:
+                                        id:motion3
+                                        index:"3"
+                                        size_hint_x:.2
+                                        source:"Assets/icons/motion-detection-none.png"
+
+                            BoxLayout:
+                                padding:6
+                                orientation:"vertical"
+                                width:self.parent.width/2
+                                height:self.parent.height/2
+                                BoxLayout:
+                                    size_hint:1,.9
+                                    BoxLayout:
+                                        area:"4"
+                                        size_hint:1,1
+                                BoxLayout:
+                                    opacity:0
+                                    id:grid_box_4
+                                    orientation: "horizontal"
+                                    size_hint:1,.1
+                                    Label:
+                                        id:cam4_name4
+                                        font_name:'Assets/Fonts/BKoodakBold.ttf'
+                                        font_size:20
+                                        size_hint_x:.9
+                                    Label:
+                                        size_hint_x:.2
+                                    IconButtonFullScreen:
+                                        id_id:"full_screen4"
+                                        size_hint_x:.2
+                                        source:"Assets/icons/fullscreen-enter.png"
+                                    Label:
+                                        size_hint_x:.2
+                                    IconMotionDetectionChange:
+                                        id:motion4
+                                        index:"4"
+                                        size_hint_x:.2
+                                        source:"Assets/icons/motion-detection-none.png"
+
+
+                        BoxLayout:
+                            id:zir_canvas
+                            width:self.parent.width
+                            height:self.parent.height
+                            pos_hint: {"x":0,"y":0}
+
+
+    CustomSetting
+        name:"customsetting"
+        BoxLayout:
+            size_hint:1,1
+            orientation:'horizontal'
+            BoxLayout:
+                size_hint:.5,1
+            BoxLayout:
+                padding:10
+                orientation:'vertical'
+                size_hint:.5,1
+                ScrollView:
+                    size_hint:1,.92
+                    GridLayout:
+                        size_hint_y: None
+                        height:self.minimum_height
+                        padding:10
+                        spacing:15
+                        cols:2
+                        TextInput:
+                            size_hint:.5,None
+                            id:txt_center_ip
+                            height:30
+                            padding:5
+                        Label:
+                            size_hint:.5,None
+                            height:30
+                            id:lbl_center_ip
+                            font_name:"Assets/Fonts/BTitrBd.ttf"
+
+                        Switch:
+                            size_hint:.5,None
+                            height:30
+                            id:txt_enbale_3g
+                        Label:
+                            size_hint:.5,None
+                            height:30
+                            id:lbl_enbale_3g
+                            font_name:"Assets/Fonts/BTitrBd.ttf"
+
+                        GridLayout:
+                            cols:2
+                            rows:3
+                            spacing:5
+                            size_hint:.5,None
+                            CheckBox:
+                                id:txt_ch_box_show_camera1
+                                group:'ch_box_show_camera'
+                            Label:
+                                font_name:"Assets/Fonts/BTitrBd.ttf"
+                                id:lbl_ch_box_show_camera1
+                            CheckBox:
+                                id:txt_ch_box_show_camera2
+                                group:'ch_box_show_camera'
+                            Label:
+                                font_name:"Assets/Fonts/BTitrBd.ttf"
+                                id:lbl_ch_box_show_camera2
+
+                        Label:
+                            size_hint:.5,None
+                            height:30
+                            id:lbl_show_camera
+                            font_name:"Assets/Fonts/BTitrBd.ttf"
+
+                        TextInput:
+                            spacing:5
+                            size_hint:.5,None
+                            height:30
+                            id:txt_key
+
+                        Label:
+                            size_hint:.5,None
+                            height:30
+                            text:app.convert_code_string('key')
+                            font_name:"Assets/Fonts/BTitrBd.ttf"
+
+
+                BoxLayout:
+                    padding:10
+                    size_hint:1,.08
+                    orientation:'horizontal'
+                    Button:
+                        font_name:"Assets/Fonts/BKoodakBold.ttf"
+                        id:btn_exit_lsetting
+                        size_hint:.5,1
+                        on_press:self.parent.parent.parent.parent.clicked_btn_exit()
+                    Button:
+                        font_name:"Assets/Fonts/BKoodakBold.ttf"
+                        id:btn_save_lsetting
+                        size_hint:.5,1
+                        on_press:self.parent.parent.parent.parent.clicked_btn_save()
+
+
